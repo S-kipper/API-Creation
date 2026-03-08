@@ -26,6 +26,12 @@ def get_user(user_id):
         user_data["extra"] = extra
         
     return jsonify(user_data), 200 #200 here is called the Status code (it is the default status code for success)
+
+@app.route("/create-user", methods= ["POST"])
+def create_user():
+    data = request.get_json()
+    
+    return jsonify(data), 201
     
     
 if __name__ == "__main__": #This is basically a python convention and checks if this file is running directly 
